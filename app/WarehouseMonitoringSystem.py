@@ -24,9 +24,6 @@ RANDOM_VALUE = 0.0 #in [0 - 1] range
 OCURRENCE = "Inactive" #Active or Inactive
 THERMOMETER_STATE = "Off" #On or Off
 RFID_STATE = "Off" #On or Off
-FILTER_STATE = "New" #Created or New
-PREDICATE_STATE = "New" #Created or New
-FILTER_RESULT = "False" #True or False
 
 #Input event object initialization from Input class
 INPUT = Input.INPUT(7) 
@@ -83,11 +80,13 @@ SUBSCRIPTION = Subscription.SUBSCRIPTION()
 SUBSCRIPTION.BLOCK = []
 
 TermB = 0
-TermS = 0
-TermF = 0
+TermS = 1
+TermF = 1
 
-NEW_PREDICATE_STATE = "Yes"
-NEW_FILTER_STATE = "Yes"
+NEW_PREDICATE_STATE = "Yes" #Yes or No
+NEW_FILTER_STATE = "Yes" #Yes or No
+
+FILTER_RESULT = "False" #True or False
 
 #DATABASE CONFIGURATION
 database = Database.Database(1)
@@ -98,7 +97,6 @@ def main():
         #Interface interaction
         if(input("(1) CREATE SUBSCRIPTION \n(0) Continue to simulation\n")!=str(1)):
             break;
-        
         SUBSCRIPTION.CREATES()
         
     i = 0

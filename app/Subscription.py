@@ -43,7 +43,7 @@ class SUBSCRIPTION:
             #We push the filter ID at the end of subscription vector
             self.SUBSCRIPTION[len(self.SUBSCRIPTION)-1].append(self.FILTER[len(self.FILTER)-1][0])
             
-            TermF = 1
+            WarehouseMonitoringSystem.TermF = 1
             #Push into filter vector specification
             while(WarehouseMonitoringSystem.NEW_PREDICATE_STATE == "Yes"):
                 
@@ -59,7 +59,7 @@ class SUBSCRIPTION:
                         self.PREDICATE[len(self.PREDICATE)-1].append(self.FILTER[len(self.FILTER)-2][len(self.FILTER[len(self.FILTER)-2])-1]+1)
                 else:
                     #If we have at least one predicate in current predicate vector, we just put the last current filter predicate ID plus 1
-                    self.PREDICATE[len(self.PREDICATE)-1].append(self.FILTER[len(self.FILTER)-1][TermF-1]+1)
+                    self.PREDICATE[len(self.PREDICATE)-1].append(self.FILTER[len(self.FILTER)-1][WarehouseMonitoringSystem.TermF-1]+1)
                 
                 #Subscriber selects predicate input name (Index 1)
                 self.PREDICATE[len(self.PREDICATE)-1].append(self.SELECTS_PREDICATE_INDEX_1())
@@ -68,7 +68,7 @@ class SUBSCRIPTION:
                 #Inserts predicate value (Index 3)
                 self.PREDICATE[len(self.PREDICATE)-1].append(self.INSERTS_PREDICATE_INDEX_3())
                 
-                TermF = TermF + 1
+                WarehouseMonitoringSystem.TermF = WarehouseMonitoringSystem.TermF + 1
                 #We push the predicate ID at the end of filter vector
                 self.FILTER[len(self.FILTER)-1].append(self.PREDICATE[len(self.PREDICATE)-1][0])
                 
