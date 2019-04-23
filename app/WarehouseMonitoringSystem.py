@@ -67,7 +67,7 @@ SUBSCRIBER.ID[2] = "SU3"
 #Subscriber ID vector, position 3 assignation
 SUBSCRIBER.ID[3] = "SU4"
 #Subscriber name vector, position 0 assignation
-SUBSCRIBER.NAME[0] = "Management Da"
+SUBSCRIBER.NAME[0] = "System Management Dashboard"
 #Subscriber name vector, position 1 assignation
 SUBSCRIBER.NAME[1] = "Company Customer"
 #Subscriber name vector, position 2 assignation
