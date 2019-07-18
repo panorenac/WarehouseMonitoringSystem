@@ -78,8 +78,6 @@ class SUBSCRIPTION:
             self.SELECTS_NEW_FILTER_STATE()
        
         WarehouseMonitoringSystem.TermB = WarehouseMonitoringSystem.TermB + 1
-        
-        #Interface interaction
         self.printSubsciption()
         
     
@@ -137,6 +135,12 @@ class SUBSCRIPTION:
         return value
     
     def printSubsciption(self):
+        
+        #MERGE DUPLICATED PREDICATES AND FILTERS
+        self.mergePredicates()
+        self.mergeFilters()
+        #END MERGER
+        
         stringBlock = "["
         stringSubscription = ""
         stringFilters = ""
@@ -176,3 +180,50 @@ class SUBSCRIPTION:
         print(stringFilters)
         print("PREDICATE:")
         print(stringPredicate)
+        
+    def mergePredicates(self):
+        i = 0
+        while(i<len(self.PREDICATE)):
+            j = i + 1
+            while(j<len(self.PREDICATE)):
+                equalPredicates = True
+                for k in range(1, len(self.PREDICATE[j])):
+                    if(self.PREDICATE[i][k] != self.PREDICATE[j][k]):
+                        equalPredicates = False
+                        break
+                if equalPredicates:
+                    for filterVector in self.FILTER:
+                        for l in range(1, len(filterVector)):
+                            if(self.PREDICATE[j][0] == filterVector[l]):
+                                filterVector[l] = self.PREDICATE[i][0]
+                    self.PREDICATE.pop(j)
+                else:
+                    j += 1
+            i += 1
+    
+    def mergeFilters(self):
+        i = 0
+        while(i<len(self.FILTER)):
+            j = i + 1
+            while(j<len(self.FILTER)):
+                equalFilters = True
+                #PREDICATE IN FILTER 1
+                for k in range (1, len(self.FILTER[i])):
+                    predicateInFilter2 = False
+                    #PREDICATE IN FILTER 2
+                    for l in range(1, len(self.FILTER[j])):
+                        if(self.FILTER[j][l] == self.FILTER[i][k]):
+                            predicateInFilter2 = True
+                            break
+                    if predicateInFilter2 == False:
+                        equalFilters = False
+                        break
+                if equalFilters:
+                    for subscriptionVector in self.SUBSCRIPTION:
+                        for m in range(1, len(subscriptionVector)):
+                            if(self.FILTER[j][0] == subscriptionVector[m]):
+                                subscriptionVector[m] = self.FILTER[i][0]
+                    self.FILTER.pop(j)
+                else:
+                    j += 1
+            i += 1

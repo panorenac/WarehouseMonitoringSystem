@@ -99,6 +99,10 @@ def main():
             break;
         SUBSCRIPTION.CREATES()
         
+    #Interface interaction
+    #SUBSCRIPTION.printSubsciption()
+    #input("PRESS ENTER TO CONTINUE")
+    
     i = 0
     while(i<44640):
         SEAFOOD_ARRIVES_TO_WAREHOUSE()
@@ -172,7 +176,7 @@ def TEMPERATURE_EMERGES():
         THERMOMETER_STATE = "On"
         TIMESTAMP = "Stop"
         #Inserts Temperature
-        temperatureRecord = Temperature.TEMPERATURE(round(gaussian_generator(-8, 3)), 
+        temperatureRecord = Temperature.TEMPERATURE(round(gaussian_generator(-20, 3)), 
                                                     DAY,
                                                     database)
         temperatureRecord.INSERTS()
