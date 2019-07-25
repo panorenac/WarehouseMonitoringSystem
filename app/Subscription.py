@@ -131,7 +131,7 @@ class SUBSCRIPTION:
     
     #Interface interaction
     def INSERTS_PREDICATE_INDEX_3(self):
-        value = int(input("INSERT SUBSCRIPTION.PREDICATE[3] = ")) #Subscriber inserts value
+        value = float(input("INSERT SUBSCRIPTION.PREDICATE[3] = ")) #Subscriber inserts value
         return value
     
     def printSubsciption(self):

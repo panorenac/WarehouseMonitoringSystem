@@ -148,8 +148,8 @@ def SEAFOOD_ARRIVES_TO_WAREHOUSE():
         RFID_STATE = "On"
         RANDOM_VALUE = 0
         #Seafood insertion
-        seafoodRecord = Seafood.SEAFOOD(round(gaussian_generator(138000, 40000)), 
-                                        round(gaussian_generator(440000, 30000)), 
+        seafoodRecord = Seafood.SEAFOOD(round(gaussian_generator(317, 237)), 
+                                        round(gaussian_generator(138333, 99482)), 
                                         DAY, database)
         seafoodRecord.INSERTS()
         #Push specification
@@ -222,9 +222,9 @@ def EVENT_MESSAGE_EMERGES():
                                                     OUTPUT.ATTRIBUTE.append(INPUT.ATTRIBUTE[Terml])
                                                     OUTPUT.VALUE.append(INPUT.VALUE[Terml])
                                                     if(Terml>4):
-                                                        OUTPUT.PUBLISHER_ID.append(PUBLISHER.ID[1])
-                                                    else:
                                                         OUTPUT.PUBLISHER_ID.append(PUBLISHER.ID[0])
+                                                    else:
+                                                        OUTPUT.PUBLISHER_ID.append(PUBLISHER.ID[1])
                                                     TermO = TermO + 1
                                                     FILTER_RESULT = "True"
                                                 else:
