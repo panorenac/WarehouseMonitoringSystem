@@ -10,5 +10,8 @@ Code execution:
 
 ##### A installed Python version is required for executing the Warehouse Monitoring System code. If you don't have Python installed yet, you can download a stable version in the following link: https://www.python.org/downloads/
 
+Execution:
 ![image](https://github.com/user-attachments/assets/52b9e792-445e-45e4-b6ac-4f536f9663b9)
+![image](https://github.com/user-attachments/assets/72c4ca7e-5a76-4fb9-9427-6dcfcdeb8ef3)
+
 
