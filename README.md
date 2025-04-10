@@ -16,3 +16,4 @@ Execution:
 ![image](https://github.com/user-attachments/assets/72c4ca7e-5a76-4fb9-9427-6dcfcdeb8ef3)
 
 
+Copyright- Todos los derechos reservados -Registro de sw: 13-75-118
